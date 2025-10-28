@@ -56,7 +56,7 @@ function paintGrid() {
 
     allGridElements.forEach(element => {
         if (isTouchDevice) {
-            element.addEventListener("touchstart", () => {
+            element.addEventListener("touchmove", () => {
                 element.style.backgroundColor = "black";        
             });
         } else {
