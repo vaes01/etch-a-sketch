@@ -52,10 +52,19 @@ function paintGrid() {
 
     let allGridElements = document.querySelectorAll(".gridElements");
 
+    let isTouchDevice = window.matchMedia("(any-pointer: coarse)").matches; 
+
     allGridElements.forEach(element => {
-        element.addEventListener("mouseenter", () => {
-            element.style.backgroundColor = "black";
-        });
+        if (isTouchDevice) {
+            element.addEventListener("touchstart", () => {
+                element.style.backgroundColor = "black";        
+            });
+        } else {
+            element.addEventListener("mouseenter", () => {
+                element.style.backgroundColor = "black";        
+            });
+        }
+
     });
 };
      
