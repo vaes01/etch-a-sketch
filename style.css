@@ -19,19 +19,23 @@
     height: 25px;
 }
 
-#mainContainer {
+.mainContainer {
     display: flex;
     flex-direction: column;
     height: 500px;
     width: 500px;
-    /* border: 0.5px solid red; */
+}
 
+.mainContainerMobile {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
 }
 
 .containerRows {
     display: flex;
     height: 100%;
-    /* border: 0.5px solid yellow; */
 }
 
 .gridElements {

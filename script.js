@@ -1,12 +1,17 @@
+let isTouchDevice = window.matchMedia("(any-pointer: coarse)").matches; 
 
-let mainContainer = document.querySelector("#mainContainer"); 
+let mainContainer = document.querySelector(".mainContainer");
+
+if (isTouchDevice) {
+    mainContainer.classList.add("mainContainerMobile");
+}
 
 let newSketchBtn = document.querySelector("#newSketchBtn");
 
 buildGrid(30);
 paintGrid();
 
-newSketchBtn.addEventListener("click", () => {
+newSketchBtn.addEventListener("pointerup", () => {
 
     let pixels = 10;
 
@@ -52,11 +57,9 @@ function paintGrid() {
 
     let allGridElements = document.querySelectorAll(".gridElements");
 
-    let isTouchDevice = window.matchMedia("(any-pointer: coarse)").matches; 
-
     allGridElements.forEach(element => {
         if (isTouchDevice) {
-            element.addEventListener("touchmove", () => {
+            element.addEventListener("pointerenter", () => {
                 element.style.backgroundColor = "black";        
             });
         } else {
